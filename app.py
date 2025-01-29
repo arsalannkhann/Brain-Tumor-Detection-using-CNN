@@ -10,7 +10,7 @@ import io
 app = Flask(__name__)
 
 # Global variables
-MODEL_PATH = 'model/best_model.keras'
+MODEL_PATH = 'best_model.keras'
 model = None
 
 def load_ml_model():
