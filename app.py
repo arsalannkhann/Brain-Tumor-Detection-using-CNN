@@ -1,28 +1,38 @@
 from flask import Flask, request, jsonify, render_template
 import os
+import gdown
 from PIL import Image
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
-import io
-
 
 app = Flask(__name__)
 
-# Global variables
-MODEL_PATH = 'best_model.keras'
-model = None
+# Google Drive file ID of your model
+GDRIVE_FILE_ID = "1aEc1Ni1mds5anu28giaiXkcM9_OOxV2y"  # Replace with your actual file ID
+MODEL_PATH = "best_model.keras"
 
+# Function to download model from Google Drive
+def download_model():
+    if not os.path.exists(MODEL_PATH):
+        print("Downloading model from Google Drive...")
+        url = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
+        gdown.download(url, MODEL_PATH, quiet=False)
+        print("Model downloaded successfully!")
+
+# Function to load model
 def load_ml_model():
     global model
     try:
+        download_model()  # Ensure model is downloaded
+
         # Enable GPU memory growth
         physical_devices = tf.config.list_physical_devices('GPU')
         if physical_devices:
             for device in physical_devices:
                 tf.config.experimental.set_memory_growth(device, True)
         
-        # Load model with optimization
+        # Load model
         model = load_model(MODEL_PATH, compile=False)
         model.compile(
             optimizer='adam',
@@ -31,15 +41,13 @@ def load_ml_model():
             run_eagerly=False
         )
         
-        # Warm up the model
+        # Warm-up the model
         dummy_input = np.zeros((1, 299, 299, 3))
         model.predict(dummy_input)
         
         print("Model loaded successfully!")
-        return True
     except Exception as e:
         print(f"Error loading model: {str(e)}")
-        return False
 
 class_names = ['glioma', 'meningioma', 'notumor', 'pituitary']
 
