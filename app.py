@@ -6,6 +6,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import io
 
+
 app = Flask(__name__)
 
 # Global variables
