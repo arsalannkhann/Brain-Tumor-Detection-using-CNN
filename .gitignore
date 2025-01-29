@@ -73,7 +73,11 @@ docs/_build/
 
 # PyBuilder
 target/
+# Ignore virtual environment
+.venv/
 
+# Ignore large model files
+model/*.keras
 # Jupyter Notebook
 .ipynb_checkpoints
 
