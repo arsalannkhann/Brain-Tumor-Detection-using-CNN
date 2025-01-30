@@ -1,6 +1,6 @@
-# Image Prediction App
+# Brain Tumor Prediction 
 
-This project is an image prediction application that uses a pre-trained model to predict the class of an input image.
+This project is an brain tumor prediction application that uses a pre-trained model to predict the class of an input image.
 
 ## Installation
 
