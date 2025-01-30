@@ -93,6 +93,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Inspired by the need for accessible medical diagnostic tools
 
 ## Support 📧
-For support, email your-email@example.com or create an issue in the repository.
+For support, email arsalankhangenai@gmail.com or create an issue in the repository.
 
-Would you like me to add or modify any section of this README?
