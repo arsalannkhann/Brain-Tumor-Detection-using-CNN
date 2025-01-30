@@ -1,65 +1,98 @@
-# Brain Tumor Prediction 
 
-This project is an brain tumor prediction application that uses a pre-trained model to predict the class of an input image.
 
-## Installation
+# Brain Tumor Detection System 🧠
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/image-prediction-app.git
-    cd image-prediction-app
-    ```
+## Project Description
+A web-based application that uses deep learning to detect brain tumors from MRI scans. The system classifies into four categories: glioma, meningioma, pituitary, and no tumor.
 
-2. Create a virtual environment:
-    ```sh
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+## Features ✨
+- **Instant Analysis**: Immediate results upon MRI scan upload
+- **High Accuracy**: Utilizes advanced deep learning model
+- **User-Friendly Interface**: Simple and interactive UI
+- **Real-Time Preview**: Instant preview of uploaded images
+- **Reliable Results**: Confidence score with each prediction
 
-3. Install the required dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
+## Tech Stack 🛠️
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Flask (Python)
+- **Deep Learning**: TensorFlow
+- **Image Processing**: PIL, NumPy
+- **Deployment**: Render
 
-4. Download the pre-trained model and place it in the project directory.
+## Installation & Setup 🚀
 
-## Usage
+### Requirements
+```bash
+pip install -r requirements.txt
+```
 
-1. Ensure the virtual environment is activated:
-    ```sh
-    source venv/bin/activate
-    ```
+### requirements.txt
+```
+tensorflow==2.13.0
+numpy==1.21.0
+Pillow==9.0.0
+flask==2.0.1
+gunicorn==20.1.0
+```
 
-2. Run the application:
-    ```sh
-    python app.py
-    ```
+### To Run Locally
+```bash
+python app.py
+```
 
-3. Use the application to predict the class of an image by calling the `get_prediction` function:
-    ```python
-    from PIL import Image
-    import numpy as np
-    from app import get_prediction
+## Project Structure 📁
+```
+brain-tumor-detection/
+├── app.py
+├── requirements.txt
+├── model/
+│   └── best_model.keras
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/
+├── templates/
+│   └── index.html
+└── README.md
+```
 
-    image = Image.open('path_to_image.jpg')
-    class_name, confidence = get_prediction(image)
-    print(f"Predicted class: {class_name}, Confidence: {confidence}")
-    ```
+## Usage 💡
+1. Visit the website
+2. Click "Upload" button or drag-and-drop an image
+3. Click "Predict" button
+4. View results and confidence score
 
-## Dependencies
+## Deployment 🌐
+This application is hosted on Render. For deployment:
+- Create a new web service on Render
+- Connect GitHub repository
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `gunicorn app:app`
 
-- Python 3.x
-- numpy
-- Pillow
-- tensorflow (or keras, depending on the model used)
+## Developer 👨‍💻
+**Arsalan Khan**
+- [LinkedIn](https://www.linkedin.com/in/arsalan-khann)
+- [GitHub](https://github.com/arsalannkhann)
 
-## Example
+## License 📝
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```python
-from PIL import Image
-import numpy as np
-from app import get_prediction
+---
 
-image = Image.open('path_to_image.jpg')
-class_name, confidence = get_prediction(image)
-print(f"Predicted class: {class_name}, Confidence: {confidence}")
+### Note
+This project is for educational purposes only and should not be used as the sole tool for medical diagnosis.
+
+## Contributing 🤝
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments 🙏
+- Thanks to all contributors who helped in building this project
+- Special thanks to the medical imaging community for providing datasets
+- Inspired by the need for accessible medical diagnostic tools
+
+## Support 📧
+For support, email your-email@example.com or create an issue in the repository.
+
+Would you like me to add or modify any section of this README?
