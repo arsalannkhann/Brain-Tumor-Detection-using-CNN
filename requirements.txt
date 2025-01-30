@@ -10,3 +10,4 @@ seaborn
 pandas
 flask
 gdown
+gunicorn
