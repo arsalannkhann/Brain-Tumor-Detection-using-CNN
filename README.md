@@ -1,17 +1,65 @@
-# Brain-Tumor-Detection-using-CNNTo push your repository to Git, you can follow these steps:
+# Image Prediction App
 
-1. Initialize a new Git repository in your project directory by running the command `git init`.
+This project is an image prediction application that uses a pre-trained model to predict the class of an input image.
 
-2. Add all the files in your project directory to the Git repository by running the command `git add .`.
+## Installation
 
-3. Commit the changes by running the command `git commit -m "Initial commit"`.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/image-prediction-app.git
+    cd image-prediction-app
+    ```
 
-4. Create a new repository on GitHub or any other Git hosting platform.
+2. Create a virtual environment:
+    ```sh
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-5. Copy the URL of the remote repository.
+3. Install the required dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-6. Add the remote repository URL to your local repository by running the command `git remote add origin <remote repository URL>`.
+4. Download the pre-trained model and place it in the project directory.
 
-7. Push your local repository to the remote repository by running the command `git push -u origin master`.
+## Usage
 
-This will push your repository to Git and make it available on the remote repository. Make sure you have the necessary permissions to push to the remote repository.
+1. Ensure the virtual environment is activated:
+    ```sh
+    source venv/bin/activate
+    ```
+
+2. Run the application:
+    ```sh
+    python app.py
+    ```
+
+3. Use the application to predict the class of an image by calling the `get_prediction` function:
+    ```python
+    from PIL import Image
+    import numpy as np
+    from app import get_prediction
+
+    image = Image.open('path_to_image.jpg')
+    class_name, confidence = get_prediction(image)
+    print(f"Predicted class: {class_name}, Confidence: {confidence}")
+    ```
+
+## Dependencies
+
+- Python 3.x
+- numpy
+- Pillow
+- tensorflow (or keras, depending on the model used)
+
+## Example
+
+```python
+from PIL import Image
+import numpy as np
+from app import get_prediction
+
+image = Image.open('path_to_image.jpg')
+class_name, confidence = get_prediction(image)
+print(f"Predicted class: {class_name}, Confidence: {confidence}")
