@@ -93,7 +93,7 @@ def uploader_section():
 
 # ------------------ Streamlit App Layout ------------------ #
 def main():
-    
+    st.set_page_config(page_title="Brain Tumor Detector", layout="centered")
     st.title("🧠 Brain Tumor Classification App")
     st.markdown("Predicts tumor type: `Glioma`, `Meningioma`, `No Tumor`, or `Pituitary` using a deep learning model.")
 
