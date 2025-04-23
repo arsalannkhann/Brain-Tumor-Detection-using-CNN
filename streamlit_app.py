@@ -8,6 +8,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 
 # ------------------ Config ------------------ #
+st.set_page_config(page_title="Brain Tumor Detector", layout="centered")
 GDRIVE_FILE_ID = "1aEc1Ni1mds5anu28giaiXkcM9_OOxV2y"  # Replace with your actual file ID
 MODEL_PATH = "best_model.keras"
 CLASS_NAMES = ['glioma', 'meningioma', 'notumor', 'pituitary']
